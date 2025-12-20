@@ -104,7 +104,7 @@ const Home: React.FC = () => {
         <div className="absolute top-0 right-0 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl -mr-48 -mt-48 animate-pulse" />
         <div className="absolute bottom-0 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl -ml-48 -mb-48 animate-pulse [animation-delay:1s]" />
         
-        <div className="container mx-auto px-12 relative z-10">
+        <div className="container mx-auto relative z-10">
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -114,12 +114,12 @@ const Home: React.FC = () => {
             <SectionHeader 
               title="Our Purpose & Direction" 
               subtitle="Guided by a clear mission and an ambitious vision, we work towards specific, measurable goals for global equality."
-              className="mb-16"
+              className="mb-8 px-24 "
             />
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl px-24 mx-auto"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
