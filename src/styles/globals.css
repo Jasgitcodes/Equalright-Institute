@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   BASE THEME TOKENS (LIGHT MODE)
+   ========================================================= */
+@layer base {
+  :root {
+    font-family: 'Outfit', sans-serif;
+
+    /* Base */
+    --background: 140 25% 98%;
+    --foreground: 140 15% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 15% 12%;
+
+    /* Brand Greens */
+    --primary: 142 45% 30%;          /* Evergreen – primary actions */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 35% 70%;        /* Sage – surfaces & sections */
+    --secondary-foreground: 142 20% 20%;
+
+    --tertiary: 190 35% 45%;         /* Teal – guidance & highlights */
+    --tertiary-foreground: 0 0% 100%;
+
+    /* Support */
+    --muted: 140 20% 95%;
+    --muted-foreground: 140 10% 45%;
+
+    --accent: 155 40% 40%;           /* Fresh green accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 20% 88%;
+    --input: 140 20% 88%;
+    --ring: 142 45% 35%;
+
+    --radius: 0.75rem;
+  }
+
+  /* =======================================================
+     DARK MODE
+     ======================================================= */
+  .dark {
+    --background: 142 15% 8%;
+    --foreground: 140 15% 95%;
+
+    --card: 142 15% 12%;
+    --card-foreground: 140 15% 95%;
+
+    --popover: 142 15% 12%;
+    --popover-foreground: 140 15% 95%;
+
+    /* Brand Greens (lifted for contrast) */
+    --primary: 142 40% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 25% 18%;
+    --secondary-foreground: 142 20% 85%;
+
+    --tertiary: 190 35% 55%;
+    --tertiary-foreground: 0 0% 100%;
+
+    /* Support */
+    --muted: 142 15% 18%;
+    --muted-foreground: 140 10% 65%;
+
+    --accent: 155 40% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 142 15% 22%;
+    --input: 142 15% 22%;
+    --ring: 142 40% 45%;
+  }
+}
+
+/* =========================================================
+   BASE ELEMENT STYLES
+   ========================================================= */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   ADVANCED VISUAL UTILITIES
+   ========================================================= */
+@layer utilities {
+  .bg-dot-pattern {
+    background-image: radial-gradient(
+      hsl(var(--tertiary) / 0.12) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(
+        to right,
+        hsl(var(--tertiary) / 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        hsl(var(--tertiary) / 0.05) 1px,
+        transparent 1px
+      );
+    background-size: 40px 40px;
+  }
+
+  .nature-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--secondary)),
+      hsl(var(--tertiary) / 0.08),
+      hsl(var(--accent) / 0.05)
+    );
+  }
+
+  .green-gradient-text {
+    background: linear-gradient(
+      to right,
+      hsl(var(--primary)),
+      hsl(var(--accent))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-soft-reveal {
+    animation: soft-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes soft-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
