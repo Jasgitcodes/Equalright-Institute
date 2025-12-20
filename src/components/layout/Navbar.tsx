@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { ThemeToggle } from '@/components/common/ThemeToggle';
+
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
@@ -70,33 +72,40 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="relative px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 overflow-hidden group"
-              >
-                <motion.span 
-                  className={`relative z-10 transition-colors duration-300 ${
-                    location.pathname === item.path ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'
-                  }`}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-center space-x-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="relative px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 overflow-hidden group"
                 >
-                  {item.name}
-                </motion.span>
-                {location.pathname === item.path && (
-                  <motion.div 
-                    layoutId="nav-bg"
-                    className="absolute inset-0 bg-primary/5 rounded-full -z-0"
-                  />
-                )}
-                <div className="absolute inset-0 bg-primary/5 rounded-full -z-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
-            ))}
+                  <motion.span 
+                    className={`relative z-10 transition-colors duration-300 ${
+                      location.pathname === item.path ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'
+                    }`}
+                  >
+                    {item.name}
+                  </motion.span>
+                  {location.pathname === item.path && (
+                    <motion.div 
+                      layoutId="nav-bg"
+                      className="absolute inset-0 bg-primary/5 rounded-full -z-0"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-primary/5 rounded-full -z-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              ))}
+            </div>
+            
+            <div className="h-6 w-px bg-border/40 mx-2" />
+            
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Menu Button + Theme Toggle */}
+          <div className="flex items-center space-x-4 md:hidden">
+            <ThemeToggle />
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleMenu}

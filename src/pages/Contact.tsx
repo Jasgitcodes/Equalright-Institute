@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
               { icon: <MapPin className="h-6 w-6" />, title: "Headquarters", value: "123 Justice Ave, Equality State" }
             ].map((item, i) => (
               <div key={i} className="flex items-start space-x-5 p-6 rounded-[2rem] border border-border/50 bg-card shadow-sm hover:border-primary/20 transition-all">
-                <div className="bg-accent p-3 rounded-2xl text-primary">{item.icon}</div>
+                <div className="bg-accent-foreground shadow-xl shadow-primary/40 p-3 rounded-2xl text-primary">{item.icon}</div>
                 <div>
                   <h3 className="font-bold text-xs tracking-widest uppercase text-muted-foreground mb-1">{item.title}</h3>
                   <p className="font-semibold text-foreground">{item.value}</p>

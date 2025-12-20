@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
 import { AnimatePresence } from 'framer-motion';
 import { PageLoader } from '@/components/common/PageLoader';
+import { ScrollToTop } from '@/components/common/ScrollToTop';
 
 /**
  * Main App component.
@@ -43,6 +44,7 @@ const AppContent = () => {
       <AnimatePresence mode="wait">
         {isTransitioning && <PageLoader key="global-loader" />}
       </AnimatePresence>
+      <ScrollToTop />
       <Navbar />
       <PageContainer>
         <AppRouter />

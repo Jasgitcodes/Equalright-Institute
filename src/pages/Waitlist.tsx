@@ -23,7 +23,7 @@ const Waitlist: React.FC = () => {
                  { icon: <Sparkles className="h-5 w-5" />, title: "Launch Discounts", desc: "Get up to 50% off your first workshop seat." }
                ].map((benefit, i) => (
                  <li key={i} className="flex items-start space-x-5 group">
-                   <div className="bg-accent p-3 rounded-2xl text-primary group-hover:scale-110 transition-transform">{benefit.icon}</div>
+                   <div className="bg-accent-foreground  shadow-xl shadow-primary/40 p-3 rounded-2xl text-primary group-hover:border-primary/70 group-hover:border group-hover:scale-110 transition-transform">{benefit.icon}</div>
                    <div className="space-y-1">
                      <h3 className="font-bold text-base text-foreground group-hover:text-primary transition-colors">{benefit.title}</h3>
                      <p className="text-sm text-muted-foreground leading-relaxed">{benefit.desc}</p>
