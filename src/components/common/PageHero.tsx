@@ -21,7 +21,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, image, clas
             alt={title} 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-background/40 backdrop-blur-sm" />
           <div className="absolute inset-0 right-0 bottom-0 bg-gradient-to-t from-accent/10 via-background/20 to-transparent" />
         </div>
       ) : (
@@ -43,7 +43,7 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, image, clas
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="inline-block px-4 py-1.5 rounded-full bg-tertiary/10 border border-tertiary/20 backdrop-blur-md mb-4"
         >
-          <span className="text-xs font-black uppercase tracking-[0.3em] gold-gradient">
+          <span className="hidden md:block text-xs font-black uppercase tracking-[0.3em] gold-gradient">
             Equal Rights Institute
           </span>
         </motion.div>

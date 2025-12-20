@@ -24,6 +24,17 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
@@ -104,7 +115,7 @@ export const Navbar: React.FC = () => {
               initial={{ opacity: 0, height: 0, marginTop: 0 }}
               animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
               exit={{ opacity: 0, height: 0, marginTop: 0 }}
-              className="md:hidden border-t overflow-hidden space-y-2 bg-background/95 backdrop-blur-md rounded-2xl shadow-xl px-4 py-4"
+              className="md:hidden border-t overflow-hidden space-y-2 bg-background/95 backdrop-blur-xl rounded-2xl shadow-xl px-4 py-4"
             >
               {navItems.map((item) => (
                 <motion.div
