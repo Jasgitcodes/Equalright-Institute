@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center space-x-2 group">
             <motion.div 
               whileHover={{ rotate: 12, scale: 1.1 }}
-              className="bg-primary p-2 rounded-xl shadow-lg shadow-primary/20 w-10 h-10 flex items-center justify-center overflow-hidden"
+              className="bg-blend-color-burn p-1 rounded-xl shadow-lg shadow-primary/20 w-10 h-10 flex items-center justify-center overflow-hidden"
             >
               <img src="/favicon.png" alt="EQI Logo" className="w-full h-full object-cover rounded-md" />
             </motion.div>

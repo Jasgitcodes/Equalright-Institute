@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { LoadingSpinner } from '@/components/common/LoadingSpinner';
+import { PageLoader } from '@/components/common/PageLoader';
 
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
@@ -10,7 +10,7 @@ const Waitlist = lazy(() => import('@/pages/Waitlist'));
 
 export const AppRouter = () => {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
+    <Suspense fallback={<PageLoader />}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

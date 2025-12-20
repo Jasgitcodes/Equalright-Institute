@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/common/SectionHeader';
+import { PageHero } from '@/components/common/PageHero';
 import { Zap, BookOpen, MessageSquare, Award, Clock, Star, ArrowRight, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -22,25 +23,19 @@ const staggerContainer = {
 const Services: React.FC = () => {
   return (
     <div className="space-y-24 pb-20">
-      <section className="pt-12">
-        <motion.div
-           initial="initial"
-           animate="animate"
-           variants={fadeInUp}
-        >
-          <SectionHeader 
-            title="Our Services" 
-            subtitle="We provide a comprehensive suite of educational and professional services designed to maximize your impact as an advocate."
-          />
-        </motion.div>
+      <PageHero 
+        title="Our Services"
+        subtitle="Empowering individuals and organizations through professional training, strategic advocacy, and global support."
+        image="/assets/heroes/services.png"
+      />
         
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-        >
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
           {[
             {
               icon: <Zap className="h-10 w-10" />,
@@ -99,7 +94,6 @@ const Services: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
-      </section>
 
       <motion.section 
         className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-card border border-tertiary/10 p-12 rounded-[3.5rem] shadow-2xl shadow-tertiary/5 relative overflow-hidden"

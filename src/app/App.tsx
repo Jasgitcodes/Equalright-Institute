@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/Footer';
 import { PageContainer } from '@/components/layout/PageContainer';
 import { useLocation } from 'react-router-dom';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
+import { AnimatePresence } from 'framer-motion';
+import { PageLoader } from '@/components/common/PageLoader';
 
 /**
  * Main App component.
@@ -13,10 +15,15 @@ import { useScrollToTop } from '@/hooks/useScrollToTop';
  * Path aliases like @/ are configured in vite.config.ts and tsconfig.json.
  */
 const AppContent = () => {
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
   const location = useLocation();
   useScrollToTop();
 
   React.useEffect(() => {
+    // Show loader on route change for a premium feel
+    setIsTransitioning(true);
+    const timer = setTimeout(() => setIsTransitioning(false), 1500);
+
     const routeNames: Record<string, string> = {
       '/': 'Home',
       '/about': 'About',
@@ -27,10 +34,15 @@ const AppContent = () => {
 
     const currentPage = routeNames[location.pathname] || 'EqualRights';
     document.title = `EQI | ${currentPage}`;
-  }, [location]);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
+      <AnimatePresence mode="wait">
+        {isTransitioning && <PageLoader key="global-loader" />}
+      </AnimatePresence>
       <Navbar />
       <PageContainer>
         <AppRouter />

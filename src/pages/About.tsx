@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/common/SectionHeader';
+import { PageHero } from '@/components/common/PageHero';
 import { Users, Target, Heart } from 'lucide-react';
 
 const fadeInUp = {
@@ -21,19 +22,11 @@ const staggerContainer = {
 const About: React.FC = () => {
   return (
     <div className="space-y-24 pb-20">
-      <motion.section 
-        className="pt-12 text-center max-w-3xl mx-auto space-y-6"
-        initial="initial"
-        animate="animate"
-        variants={fadeInUp}
-      >
-        <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[1.1]">
-          Our Mission is <span className="gold-gradient">Equality</span>
-        </h1>
-        <p className="text-xl text-muted-foreground leading-relaxed font-medium">
-          Founded in 2010, the Equal Rights Institute has been at the forefront of the movement for social justice, providing elite-level training to the next generation of advocates.
-        </p>
-      </motion.section>
+      <PageHero 
+        title="Our Story & Vision"
+        subtitle="Dedicated to promoting equality and justice through education, advocacy, and global collaboration."
+        image="/assets/heroes/about.png"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <motion.div 

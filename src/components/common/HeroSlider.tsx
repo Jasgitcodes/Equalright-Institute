@@ -45,7 +45,7 @@ export const HeroSlider: React.FC = () => {
   const [progress, setProgress] = React.useState(0);
 
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
   React.useEffect(() => {
@@ -79,8 +79,9 @@ export const HeroSlider: React.FC = () => {
           plugin.current.stop();
         }}
         onMouseLeave={() => {
-          plugin.current.reset();
+          plugin.current.play();
         }}
+        
       >
         <CarouselContent>
           {slides.map((slide, index) => (
@@ -103,7 +104,7 @@ export const HeroSlider: React.FC = () => {
                         </span>
                       </div>
                       
-                      <h1 className="text-4xl md:text-8xl font-extrabold tracking-tight text-foreground leading-[1.1] md:leading-[1.05] animate-soft-reveal [animation-delay:100ms]">
+                      <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] md:leading-[1.05] animate-soft-reveal [animation-delay:100ms]">
                         {slide.title}
                       </h1>
                       
@@ -134,12 +135,12 @@ export const HeroSlider: React.FC = () => {
         </CarouselContent>
         
         {/* Progress Indicators */}
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-background/20 z-30">
+        {/* <div className="absolute bottom-0 left-0 w-full h-1 bg-background/20 z-30">
           <div 
             className="h-full bg-primary transition-all duration-75 ease-linear"
             style={{ width: `${progress}%` }}
           />
-        </div>
+        </div> */}
 
         {/* Navigation Overlays - Hidden on mobile, shown on md+ */}
         {/* Previous Button - Left Side */}

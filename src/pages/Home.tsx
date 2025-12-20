@@ -100,11 +100,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Purpose & Direction Section */}
-      <section className="relative py-24 nature-gradient overflow-hidden -mx-4 rounded-[3rem] border border-tertiary/5">
+      <section className="relative py-24 nature-gradient overflow-hidden -mx-24 border border-tertiary/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl -mr-48 -mt-48 animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -ml-48 -mb-48 animate-pulse [animation-delay:1s]" />
+        <div className="absolute bottom-0 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl -ml-48 -mb-48 animate-pulse [animation-delay:1s]" />
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-12 relative z-10">
           <motion.div
             initial="initial"
             whileInView="animate"
