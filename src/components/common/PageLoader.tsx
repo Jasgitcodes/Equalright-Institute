@@ -54,10 +54,10 @@ export const PageLoader: React.FC = () => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.4 }}
-            transition={{ delay: 1.2 }}
-            className="text-[10px] font-black uppercase tracking-[0.3em] italic"
+            transition={{ delay: 0.8 }}
+            className="text-[8px] font-black uppercase tracking-[0.3em] italic"
           >
-            Orchestrating Excellence
+            PROMOTING EDUCATION FOR HOLISTIC HUMAN DEVELOPMENT
           </motion.p>
         </div>
       </div>

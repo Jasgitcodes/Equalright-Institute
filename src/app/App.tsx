@@ -23,7 +23,7 @@ const AppContent = () => {
   React.useEffect(() => {
     // Show loader on route change for a premium feel
     setIsTransitioning(true);
-    const timer = setTimeout(() => setIsTransitioning(false), 1500);
+    const timer = setTimeout(() => setIsTransitioning(false), 1200);
 
     const routeNames: Record<string, string> = {
       '/': 'Home',
@@ -34,7 +34,7 @@ const AppContent = () => {
     };
 
     const currentPage = routeNames[location.pathname] || 'EqualRights';
-    document.title = `EQI | ${currentPage}`;
+    document.title = `ESSA | ${currentPage}`;
 
     return () => clearTimeout(timer);
   }, [location.pathname]);

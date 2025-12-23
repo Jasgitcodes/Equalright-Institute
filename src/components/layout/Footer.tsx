@@ -83,9 +83,9 @@ export const Footer: React.FC = () => {
             <h3 className="text-xs font-black uppercase tracking-[0.2em] text-tertiary/80">Connect</h3>
             <ul className="space-y-4">
               {[
-                { icon: <Mail className="h-4 w-4" />, text: "info@eri-institute.org" },
-                { icon: <Phone className="h-4 w-4" />, text: "+1 (555) 123-4567" },
-                { icon: <MapPin className="h-4 w-4" />, text: "123 Justice Ave, Equality State" }
+                { icon: <Mail className="h-4 w-4" />, text: "equalrightseducationalservices@gmail.com" },
+                { icon: <Phone className="h-4 w-4" />, text: "07034723374, 08050832281" },
+                { icon: <MapPin className="h-4 w-4" />, text: "Oduntayo close. Opposite, G.S.S Gwagwalada, Abuja, Nig." }
               ].map((item, i) => (
                 <motion.li 
                   key={i} 

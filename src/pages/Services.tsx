@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { PageHero } from '@/components/common/PageHero';
-import { Zap, BookOpen, MessageSquare, Award, Clock, Star, ArrowRight, Users } from 'lucide-react';
+import { Zap, BookOpen, MessageSquare, Award, Clock, Star, ArrowRight, Users, Briefcase, GraduationCap, Map } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const fadeInUp = {
@@ -30,7 +30,7 @@ const Services: React.FC = () => {
       />
         
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 container mx-auto px-4"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
@@ -39,21 +39,33 @@ const Services: React.FC = () => {
           {[
             {
               icon: <Zap className="h-10 w-10" />,
-              title: "Intensive Workshops",
-              price: "Starting at $199",
-              features: ["Expert instruction", "Interactive role-playing", "Certification", "Post-workshop support"]
+              title: "Seminars & Conferences",
+              price: "Educational",
+              features: ["For Educators & Students", "Public Workshops", "Educational Issues", "Expert Speakers"]
             },
             {
-              icon: <BookOpen className="h-10 w-10" />,
-              title: "Online Courses",
-              price: "Starting at $49",
-              features: ["Self-paced learning", "Lifetime access", "Mobile optimized", "Community forum"]
+              icon: <Map className="h-10 w-10" />,
+              title: "Field Trips & Mentoring",
+              price: "Comprehensive",
+              features: ["Quality Assurance", "Academic Mentoring", "Career Guidance", "Social Mentoring"]
             },
             {
               icon: <MessageSquare className="h-10 w-10" />,
-              title: "Strategic Consulting",
-              price: "Inquire for pricing",
-              features: ["Custom program design", "Organizational auditing", "1-on-1 coaching", "Impact measurement"]
+              title: "Advisory Roles",
+              price: "Strategic",
+              features: ["NGO Formation", "Educational Consulting", "Policy Advice", "Organizational Support"]
+            },
+            {
+              icon: <Briefcase className="h-10 w-10" />,
+              title: "Skills Acquisition",
+              price: "Development",
+              features: ["Youth Programs", "Potential Development", "Vocational Training", "Self-Reliance"]
+            },
+            {
+              icon: <GraduationCap className="h-10 w-10" />,
+              title: "Tutorial Programs",
+              price: "Academic",
+              features: ["All Levels", "Exam Preparation", "Subject Mastery", "Personalized Learning"]
             }
           ].map((service, i) => (
             <motion.div 
@@ -67,8 +79,8 @@ const Services: React.FC = () => {
                 {service.icon}
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-black tracking-tight text-foreground">{service.title}</h3>
-                <div className="text-xl font-black gold-gradient">{service.price}</div>
+                <h3 className="text-2xl font-black tracking-tight text-foreground">{service.title}</h3>
+                <div className="text-lg font-black gold-gradient uppercase tracking-widest">{service.price}</div>
               </div>
               <ul className="space-y-4 text-muted-foreground text-sm font-medium">
                 {service.features.map((feature, j) => (
@@ -96,7 +108,7 @@ const Services: React.FC = () => {
         </motion.div>
 
       <motion.section 
-        className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-card border border-tertiary/10 p-12 rounded-[3.5rem] shadow-2xl shadow-tertiary/5 relative overflow-hidden"
+        className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-card border border-tertiary/10 p-12 rounded-[3.5rem] shadow-2xl shadow-tertiary/5 relative overflow-hidden container mx-auto px-4"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
@@ -116,7 +128,7 @@ const Services: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center space-y-10 relative z-10">
-          <h3 className="text-3xl font-black tracking-tight">Why choose ERI?</h3>
+          <h3 className="text-3xl font-black tracking-tight">Why choose EESA?</h3>
           <motion.div className="grid grid-cols-1 gap-6" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             <motion.div className="flex items-start space-x-6 p-6 bg-tertiary/5 rounded-3xl border border-tertiary/10" variants={fadeInUp}>
                <div className="bg-primary p-3 rounded-2xl shadow-lg shadow-primary/20">
@@ -124,7 +136,7 @@ const Services: React.FC = () => {
                </div>
                <div>
                  <p className="font-black text-lg">Accredited Programs</p>
-                 <p className="text-sm text-muted-foreground font-medium">Recognized by major social justice organizations.</p>
+                 <p className="text-sm text-muted-foreground font-medium">Recognized by major educational bodies.</p>
                </div>
             </motion.div>
             <motion.div className="flex items-start space-x-6 p-6 bg-tertiary/5 rounded-3xl border border-tertiary/10" variants={fadeInUp}>
