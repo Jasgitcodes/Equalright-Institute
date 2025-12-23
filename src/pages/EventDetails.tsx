@@ -4,6 +4,10 @@ import { motion } from 'framer-motion';
 import { PageHero } from '@/components/common/PageHero';
 import { ArrowLeft, Calendar, MapPin, Clock, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import workshopImg from '@/assets/images/workshop.jpg';
+import skillsImg from '@/assets/images/skills.jpg';
+import conferenceImg from '@/assets/images/conference.jpg';
+import eventsHeroImg from '@/assets/heroes/events.png';
 
 // This would ideally come from a shared data source or API
 const events = [
@@ -27,7 +31,7 @@ const events = [
 
       <p>The feedback from participants was overwhelmingly positive, with many citing the practical breakout sessions as the highlight of the day. We are committed to continuing these workshops to support the professional development of our local educators.</p>
     `,
-    image: "/assets/images/workshop.jpg"
+    image: workshopImg
   },
   {
     id: 'youth-skills-summit',
@@ -40,7 +44,7 @@ const events = [
       <p>The Youth Skills Summit was a landmark event for EqualRights Educational Services. We hosted over 200 young people for a day of inspiration, learning, and networking.</p>
       <p>Industry experts shared insights on the future of work, entrepreneurship, and the importance of digital literacy. Participants also had the opportunity to sign up for our upcoming skills acquisition programs.</p>
     `,
-    image: "/assets/images/skills.jpg"
+    image: skillsImg
   },
   {
     id: 'annual-educational-conference',
@@ -53,7 +57,7 @@ const events = [
       <p>Our inaugural Annual Educational Conference was held virtually, allowing us to reach a global audience. The theme was "Transforming Education for a Digital Age".</p>
       <p>Speakers included renowned educationalists, policymakers, and tech innovators. The discussions centered on the challenges and opportunities facing the Nigerian educational sector and the role of private providers in bridging the gap.</p>
     `,
-    image: "/assets/images/conference.jpg"
+    image: conferenceImg
   }
 ];
 
@@ -76,7 +80,7 @@ const EventDetails: React.FC = () => {
       <PageHero 
         title={event.title}
         subtitle="Event Recap & Highlights"
-        image="/assets/heroes/events.png"
+        image={eventsHeroImg}
       />
 
       <div className="container mx-auto px-4 max-w-5xl">
@@ -94,7 +98,8 @@ const EventDetails: React.FC = () => {
           <div className="lg:col-span-2 space-y-8">
             <div className="aspect-video bg-muted rounded-[2rem] overflow-hidden relative shadow-xl">
                <div className="absolute inset-0 flex items-center justify-center bg-tertiary/10">
-                 <Calendar className="h-24 w-24 text-tertiary/20" />
+                 {/* <Calendar className="h-24 w-24 text-tertiary/20" /> */}
+                 <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
                </div>
             </div>
 

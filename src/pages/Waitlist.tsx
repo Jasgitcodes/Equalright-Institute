@@ -2,6 +2,7 @@ import React from 'react';
 import { PageHero } from '@/components/common/PageHero';
 import { WaitlistForm } from '@/features/waitlist/WaitlistForm';
 import { Sparkles, Zap, ShieldCheck } from 'lucide-react';
+import waitlistHeroImg from '@/assets/heroes/waitlist.png';
 
 const Waitlist: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Waitlist: React.FC = () => {
       <PageHero 
         title="Be Part of the Future"
         subtitle="Something big is coming. Join our exclusive waitlist for early beta access and founding member benefits."
-        image="/assets/heroes/waitlist.png"
+        image={waitlistHeroImg}
       />
       
       <div className="container mx-auto px-4 flex justify-center">

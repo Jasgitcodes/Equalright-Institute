@@ -4,148 +4,8 @@ import { motion } from 'framer-motion';
 import { PageHero } from '@/components/common/PageHero';
 import { ArrowLeft, User, Mail, Phone, MapPin, Award, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-// This would ideally come from a shared data source or API
-const teamMembers = [
-  {
-    id: 'musa-kabiru-paul',
-    name: "Musa Kabiru Paul",
-    role: "CEO/Founder",
-    institution: "EqualRights Educational Services, Gwagwalada Abuja",
-    bio: "Former HOD/Lecturer, Institute of Ecumenical Education, Enugu State. A visionary leader dedicated to transforming the educational landscape in Nigeria.",
-    details: [
-      "Experienced Educational Administrator",
-      "Expert in Curriculum Development",
-      "Advocate for Educational Equality"
-    ],
-    contact: {
-      email: "equalrightseducationalservices@gmail.com",
-      phone: "07034723374"
-    }
-  },
-  {
-    id: 'dr-omachi-daniel',
-    name: "Dr. Omachi Daniel",
-    role: "Provost",
-    institution: "Elyland Prestigious Citadel of Learning, Ankpa Kogi State",
-    bio: "Faculty of Education, Godfrey Okoye University, Enugu State. A distinguished academic with a passion for teacher training and educational research.",
-    details: [
-      "PhD in Education",
-      "Published Researcher",
-      "Teacher Training Specialist"
-    ]
-  },
-  {
-    id: 'dr-martha-steven-kadiri',
-    name: "Dr. Martha Steven-Kadiri",
-    role: "Team Leader",
-    institution: "University of Port-Harcourt, Rivers State",
-    bio: "An experienced educator and administrator contributing to the strategic direction of EqualRights Educational Services.",
-    details: [
-      "University Lecturer",
-      "Educational Consultant"
-    ]
-  },
-  {
-    id: 'hon-timothy-adidi',
-    name: "Hon. Timothy Adidi D.",
-    role: "Team Leader",
-    institution: "Veritas University Abuja",
-    bio: "Bringing academic rigor and administrative expertise to the team.",
-    details: [
-      "Academic Leader",
-      "Policy Advisor"
-    ]
-  },
-   {
-    id: 'dr-gabriel-itumar',
-    name: "Dr. Gabriel Itumar",
-    role: "Team Leader",
-    institution: "Salem University Lokoja, Kogi State",
-    bio: "Contributing expertise in higher education management and quality assurance.",
-    details: [
-      "Higher Education Expert",
-      "Quality Assurance Specialist"
-    ]
-  },
-  {
-    id: 'hon-patrick-silver',
-    name: "Hon. Patrick Silver",
-    role: "Former Lecturer",
-    institution: "University of Calabar, Cross Rivers State. Currently Based in USA",
-    bio: "Bringing international perspective and experience to the organization.",
-    details: [
-      "International Education",
-      "Cross-cultural Communication"
-    ]
-  },
-  {
-    id: 'hon-yakubu-ismila',
-    name: "Hon. Yakubu Ismila",
-    role: "Doctoral Student",
-    institution: "London UK",
-    bio: "Currently pursuing advanced studies in education, bringing fresh insights and global best practices.",
-    details: [
-      "Educational Research",
-      "Global Education Trends"
-    ]
-  },
-  {
-    id: 'hon-alex-ohikere',
-    name: "Hon. Alex Ohikere",
-    role: "Former Lecturer",
-    institution: "Federal Polytechnic Keffi Nasarawa State",
-    bio: "Former Supervising Councilor for Education, Adavi Local Government Area Kogi State. Experienced in both academic and government educational sectors.",
-    details: [
-      "Public Administration",
-      "Educational Policy"
-    ]
-  },
-  {
-    id: 'hon-nsemeke-vincent',
-    name: "Hon. Nsemeke Vincent",
-    role: "Security Personnel",
-    institution: "Gwagwalada Abuja",
-    bio: "Ensuring the safety and security of our educational environment.",
-    details: [
-      "Security Management",
-      "Safety Protocols"
-    ]
-  },
-  {
-    id: 'mr-simeon-araga',
-    name: "Mr. Simeon Araga",
-    role: "Lecturer",
-    institution: "Federal University Of Technology, Minna Niger State",
-    bio: "An academic committed to student success and research excellence.",
-    details: [
-      "University Teaching",
-      "Student Mentorship"
-    ]
-  },
-  {
-    id: 'engr-mark-araga',
-    name: "Engr. Mark Araga",
-    role: "Operational Manager",
-    institution: "AMSO Hotel Abuja",
-    bio: "Managing operations and logistics to ensure smooth service delivery.",
-    details: [
-      "Operations Management",
-      "Logistics"
-    ]
-  },
-  {
-    id: 'mr-james-lawal-enesi',
-    name: "Mr. James Lawal Enesi",
-    role: "Managing Director",
-    institution: "EqualRight Computer Institute, Gwagwalada Abuja",
-    bio: "Leading the technology and computer literacy initiatives.",
-    details: [
-      "IT Management",
-      "Computer Education"
-    ]
-  }
-];
+import teamHeroImg from '@/assets/heroes/team.png';
+import { teamMembers } from '@/data/team';
 
 const TeamMemberProfile: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -166,7 +26,7 @@ const TeamMemberProfile: React.FC = () => {
       <PageHero 
         title={member.name}
         subtitle={member.role || "Team Member"}
-        image="/assets/heroes/team.png"
+        image={member.image || teamHeroImg}
       />
 
       <div className="container mx-auto px-4">
@@ -183,10 +43,13 @@ const TeamMemberProfile: React.FC = () => {
             className="md:col-span-1 space-y-6"
           >
             <div className="aspect-square bg-muted rounded-[2rem] overflow-hidden relative shadow-xl border border-border/50">
-               {/* Placeholder for actual image */}
-               <div className="absolute inset-0 flex items-center justify-center bg-tertiary/10">
-                 <User className="h-32 w-32 text-tertiary/20" />
-               </div>
+               {member.image ? (
+                 <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+               ) : (
+                 <div className="absolute inset-0 flex items-center justify-center bg-tertiary/10">
+                   <User className="h-32 w-32 text-tertiary/20" />
+                 </div>
+               )}
             </div>
             
             <div className="p-6 bg-card border border-border/50 rounded-2xl space-y-4 shadow-sm">

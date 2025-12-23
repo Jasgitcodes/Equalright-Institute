@@ -10,6 +10,7 @@ const EventDetails = lazy(() => import('@/pages/EventDetails'));
 const Services = lazy(() => import('@/pages/Services'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const Waitlist = lazy(() => import('@/pages/Waitlist'));
+const NotFound = lazy(() => import('@/pages/NotFound'));
 
 export const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ export const AppRouter = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/waitlist" element={<Waitlist />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

@@ -12,12 +12,16 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import heroMissionImg from '@/assets/images/hero_mission.png';
+import heroServicesImg from '@/assets/images/hero_services.png';
+import heroImpactImg from '@/assets/images/hero_impact.png';
+
 const slides = [
   {
     title: "Advancing Equality Through Education",
     subtitle: "Mission-Driven",
     description: "Empowering communities with the intellectual tools and advocacy training needed to build a more just and inclusive society for everyone.",
-    image: "/assets/images/hero_mission.png",
+    image: heroMissionImg,
     cta: "Our Mission",
     link: "/about"
   },
@@ -25,7 +29,7 @@ const slides = [
     title: "Comprehensive Educational Resources",
     subtitle: "Our Services",
     description: "From intensive workshops to digital learning platforms, we provide authoritative resources designed to maximize your social impact.",
-    image: "/assets/images/hero_services.png",
+    image: heroServicesImg,
     cta: "Explore Services",
     link: "/services"
   },
@@ -33,7 +37,7 @@ const slides = [
     title: "A Decade of Systemic Social Impact",
     subtitle: "Proven Results",
     description: "Partnering with global organizations to implement evidence-based equity frameworks that transform institutional cultures and policies.",
-    image: "/assets/images/hero_impact.png",
+    image: heroImpactImg,
     cta: "See Our Impact",
     link: "/services"
   }

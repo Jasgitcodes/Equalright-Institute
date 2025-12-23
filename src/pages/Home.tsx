@@ -10,6 +10,10 @@ import {
   CardHeader, 
   CardTitle 
 } from '@/components/ui/card';
+import workshopImg from '@/assets/images/workshop.jpg';
+import skillsImg from '@/assets/images/skills.jpg';
+import conferenceImg from '@/assets/images/conference.jpg';
+import ceoImg from '@/assets/team/musa-kabiru-paul-1.jpg';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -100,7 +104,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Purpose & Direction Section */}
-      <section className="relative py-24 nature-gradient overflow-hidden -mx-24 border border-tertiary/5">
+      <section className="relative px-8 py-24 nature-gradient overflow-hidden -mx-20 border border-tertiary/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl -mr-48 -mt-48 animate-pulse" />
         <div className="absolute bottom-0 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl -ml-48 -mb-48 animate-pulse [animation-delay:1s]" />
         
@@ -114,12 +118,12 @@ const Home: React.FC = () => {
             <SectionHeader 
               title="Our Purpose & Direction" 
               subtitle="Guided by a clear mission and an ambitious vision, we work towards specific, measurable goals for global equality."
-              className="mb-8 px-24 "
+              className="mb-8 px-12"
             />
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl px-4 mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl px-16 md:px-4 mx-auto"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -130,8 +134,8 @@ const Home: React.FC = () => {
               variants={fadeInUp}
               whileHover={{ y: -12 }}
             >
-              <Card className="h-full bg-card/90 backdrop-blur-xl p-6 rounded-[3rem] border border-tertiary/10 shadow-2xl shadow-tertiary/5 space-y-6 flex flex-col items-center text-center group hover:border-tertiary/30 transition-all duration-500 overflow-hidden">
-                <CardHeader className="flex flex-col items-center space-y-6">
+              <Card className="h-full bg-card/90 backdrop-blur-xl p-2 rounded-[3rem] border border-tertiary/10 shadow-2xl shadow-tertiary/5 space-y-4 flex flex-col items-center text-center group hover:border-tertiary/30 transition-all duration-500 overflow-hidden">
+                <CardHeader className="flex flex-col items-center space-y-2">
                   <div className="w-20 h-20 rounded-[1.5rem] bg-tertiary/10 flex items-center justify-center group-hover:bg-tertiary/20 transition-all group-hover:rotate-6 shadow-inner">
                     <Rocket className="h-10 w-10 text-tertiary animate-float" />
                   </div>
@@ -150,8 +154,8 @@ const Home: React.FC = () => {
               variants={fadeInUp}
               whileHover={{ y: -12 }}
             >
-              <Card className="h-full bg-card/90 backdrop-blur-xl p-6 rounded-[3rem] border border-tertiary/10 shadow-2xl shadow-tertiary/5 space-y-6 flex flex-col items-center text-center group hover:border-tertiary/30 transition-all duration-500 overflow-hidden">
-                <CardHeader className="flex flex-col items-center space-y-6">
+              <Card className="h-full bg-card/90 backdrop-blur-xl p-2 rounded-[3rem] border border-tertiary/10 shadow-2xl shadow-tertiary/5 space-y-4 flex flex-col items-center text-center group hover:border-tertiary/30 transition-all duration-500 overflow-hidden">
+                <CardHeader className="flex flex-col items-center space-y-2">
                   <div className="w-20 h-20 rounded-[1.5rem] bg-tertiary/10 flex items-center justify-center group-hover:bg-tertiary/20 transition-all group-hover:-rotate-6 shadow-inner">
                     <Eye className="h-10 w-10 text-tertiary animate-float [animation-delay:300ms]" />
                   </div>
@@ -181,7 +185,7 @@ const Home: React.FC = () => {
             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative shadow-2xl border-4 border-card">
               {/* Placeholder for CEO Image */}
               <div className="absolute inset-0 bg-muted flex items-center justify-center">
-                <Users className="h-32 w-32 text-muted-foreground/20" />
+                <img src={ceoImg} alt="Musa Kabiru Paul" className="w-full h-full object-cover overflow-hidden" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-8 left-8 text-white">
@@ -245,6 +249,12 @@ const Home: React.FC = () => {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
+{/* import workshopImg from '@/assets/images/workshop.jpg';
+import skillsImg from '@/assets/images/skills.jpg';
+import conferenceImg from '@/assets/images/conference.jpg'; */}
+
+{/* // ... inside the component ... */}
+
           {[
             {
               id: "educators-workshop-2024",
@@ -252,7 +262,7 @@ const Home: React.FC = () => {
               date: "March 15, 2024",
               location: "Gwagwalada, Abuja",
               description: "A comprehensive training session for teachers and school managers focusing on modern pedagogical strategies.",
-              image: "/assets/images/workshop.jpg" // Placeholder
+              image: workshopImg
             },
             {
               id: "youth-skills-summit",
@@ -260,7 +270,7 @@ const Home: React.FC = () => {
               date: "February 20, 2024",
               location: "Main Hall, Abuja",
               description: "Empowering youths with practical skills for self-reliance and career development.",
-              image: "/assets/images/skills.jpg" // Placeholder
+              image: skillsImg
             },
             {
               id: "annual-educational-conference",
@@ -268,7 +278,7 @@ const Home: React.FC = () => {
               date: "January 10, 2024",
               location: "Virtual Event",
               description: "Bringing together stakeholders to discuss the future of education in Nigeria.",
-              image: "/assets/images/conference.jpg" // Placeholder
+              image: conferenceImg
             }
           ].map((event, i) => (
             <motion.div 
@@ -279,7 +289,8 @@ const Home: React.FC = () => {
               <Card className="h-full border border-border/50 overflow-hidden rounded-[2rem] hover:shadow-xl transition-all duration-300 group flex flex-col">
                 <div className="h-48 bg-muted relative overflow-hidden shrink-0">
                   <div className="absolute inset-0 bg-tertiary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
-                    <Calendar className="h-12 w-12 text-tertiary/40" />
+                    {/* <Calendar className="h-12 w-12 text-tertiary/40" /> */}
+                    <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <CardContent className="p-6 space-y-4 flex flex-col flex-grow">
@@ -309,7 +320,7 @@ const Home: React.FC = () => {
       <section className="bg-card/50 backdrop-blur-sm border border-border/60 py-20 rounded-[3rem] mx-4 relative overflow-hidden shadow-inner">
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
         <motion.div 
-          className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10"
+          className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-2 md:px-0 md:divide-x-2 divide-border text-center relative z-10"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
@@ -322,7 +333,7 @@ const Home: React.FC = () => {
             { label: "Years Active", value: "1+" },
           ].map((stat, i) => (
             <motion.div key={i} className="space-y-2" variants={fadeInUp}>
-              <div className="text-4xl md:text-5xl font-extrabold gold-gradient drop-shadow-sm">{stat.value}</div>
+              <div className="text-2xl md:text-3xl font-extrabold gold-gradient drop-shadow-sm">{stat.value}</div>
               <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">{stat.label}</div>
             </motion.div>
           ))}

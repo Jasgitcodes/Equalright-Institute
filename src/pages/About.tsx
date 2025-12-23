@@ -5,6 +5,8 @@ import { PageHero } from '@/components/common/PageHero';
 import { Users, Target, Heart, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
+import aboutHeroImg from '@/assets/heroes/about.png';
+import missionImg from '@/assets/images/hero_mission.png';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -27,7 +29,7 @@ const About: React.FC = () => {
       <PageHero 
         title="Our Story & Vision"
         subtitle="Dedicated to promoting equality and justice through education, advocacy, and global collaboration."
-        image="/assets/heroes/about.png"
+        image={aboutHeroImg}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center container mx-auto px-4">
@@ -68,7 +70,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <img 
-            src="/assets/images/hero_mission.png" 
+            src={missionImg} 
             alt="Team collaboration at the institute" 
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
           />

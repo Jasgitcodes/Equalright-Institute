@@ -4,6 +4,7 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import { PageHero } from '@/components/common/PageHero';
 import { Zap, BookOpen, MessageSquare, Award, Clock, Star, ArrowRight, Users, Briefcase, GraduationCap, Map } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import servicesHeroImg from '@/assets/heroes/services.png';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -26,7 +27,7 @@ const Services: React.FC = () => {
       <PageHero 
         title="Our Services"
         subtitle="Empowering individuals and organizations through professional training, strategic advocacy, and global support."
-        image="/assets/heroes/services.png"
+        image={servicesHeroImg}
       />
         
       <motion.div 
