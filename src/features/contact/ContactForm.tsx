@@ -44,7 +44,7 @@ export const ContactForm: React.FC = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium">Name</label>
           <input
