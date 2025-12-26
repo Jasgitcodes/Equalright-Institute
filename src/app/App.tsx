@@ -10,6 +10,8 @@ import { AnimatePresence } from 'framer-motion';
 import { PageLoader } from '@/components/common/PageLoader';
 import { ScrollToTop } from '@/components/common/ScrollToTop';
 
+import { APP_CONFIG } from '@/constants/app';
+
 /**
  * Main App component.
  * Uses a wrap-around layout with Navbar, PageContainer, and Footer.
@@ -33,8 +35,8 @@ const AppContent = () => {
       '/waitlist': 'Waitlist',
     };
 
-    const currentPage = routeNames[location.pathname] || 'EqualRights';
-    document.title = `ESSA | ${currentPage}`;
+    const currentPage = routeNames[location.pathname] || APP_CONFIG.abbr;
+    document.title = `${APP_CONFIG.abbr} | ${currentPage}`;
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
