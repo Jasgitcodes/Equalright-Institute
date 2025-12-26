@@ -11,7 +11,7 @@ interface PageContainerProps {
 export const PageContainer: React.FC<PageContainerProps> = ({ children }) => {
   return (
     <main className="relative flex-grow min-h-screen bg-dot-pattern">
-      <div className="container mx-auto px-4 py-8 md:px-6 lg:px-8 max-w-7xl animate-in fade-in duration-700 nature-accent">
+      <div className="container mx-auto px-4 py-8 md:px-6 lg:px-8 max-w-7xl animate-in fade-in duration-1000 nature-accent">
         {children}
       </div>
     </main>

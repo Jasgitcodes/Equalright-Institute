@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { ThemeToggle } from '@/components/common/ThemeToggle';
 
+import { APP_CONFIG } from '@/constants/app';
+
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
@@ -41,34 +43,42 @@ export const Navbar: React.FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full ${
-        isScrolled 
-          ? 'bg-background/80 backdrop-blur-xl border-b border-primary/5 py-4 shadow-sm' 
-          : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full ${isScrolled
+        ? 'bg-background/80 backdrop-blur-xl border-b border-primary/5 py-4 shadow-sm'
+        : 'bg-transparent py-6'
+        }`}
     >
       {isScrolled && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.03 }}
-          className="absolute inset-0 bg-dot-pattern -z-10" 
+          className="absolute inset-0 bg-dot-pattern -z-10"
         />
       )}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 group">
-            <motion.div 
+            <motion.div
               whileHover={{ rotate: 12, scale: 1.1 }}
               className="bg-blend-color-burn p-1 rounded-xl shadow-lg shadow-primary/20 w-10 h-10 flex items-center justify-center overflow-hidden"
             >
-              <img src="/favicon.png" alt="EQI Logo" className="w-full h-full object-cover rounded-md" />
+              <img src={APP_CONFIG.logo} alt={`${APP_CONFIG.abbr} Logo`} className="w-full h-full object-cover rounded-md" />
             </motion.div>
-            <div className="text-xl font-black tracking-tight text-foreground transition-colors group-hover:text-primary">
-              Equal<span className="text-primary group-hover:text-foreground transition-colors">Rights</span> Institute
+            <div className="flex flex-col">
+              <div className="text-3xl font-black tracking-widest transition-colors group-hover:text-primary flex leading-none">
+                {APP_CONFIG.styledAbbr.map((part, index) => (
+                  <span key={index} className={part.className}>{part.text}</span>
+                ))}
+              </div>
+              <div className="text-[0.45rem] md:text-[0.65rem] font-bold tracking-widest uppercase transition-colors group-hover:text-primary flex mt-1 opacity-80 group-hover:opacity-100">
+                {APP_CONFIG.styledName.map((part, index) => (
+                  <span key={index} className={part.className}>{part.text}</span>
+                ))}
+              </div>
             </div>
           </Link>
 
@@ -81,15 +91,14 @@ export const Navbar: React.FC = () => {
                   to={item.path}
                   className="relative px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 overflow-hidden group"
                 >
-                  <motion.span 
-                    className={`relative z-10 transition-colors duration-300 ${
-                      location.pathname === item.path ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'
-                    }`}
+                  <motion.span
+                    className={`relative z-10 transition-colors duration-300 ${location.pathname === item.path ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'
+                      }`}
                   >
                     {item.name}
                   </motion.span>
                   {location.pathname === item.path && (
-                    <motion.div 
+                    <motion.div
                       layoutId="nav-bg"
                       className="absolute inset-0 bg-primary/5 rounded-full -z-0"
                     />
@@ -98,9 +107,9 @@ export const Navbar: React.FC = () => {
                 </Link>
               ))}
             </div>
-            
+
             <div className="h-6 w-px bg-border/40 mx-2" />
-            
+
             <ThemeToggle />
           </div>
 
@@ -121,7 +130,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, height: 0, marginTop: 0 }}
               animate={{ opacity: 1, height: 'auto', marginTop: 16 }}
               exit={{ opacity: 0, height: 0, marginTop: 0 }}
@@ -137,9 +146,8 @@ export const Navbar: React.FC = () => {
                   <Link
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-6 py-3 text-base font-bold rounded-xl transition-all ${
-                      location.pathname === item.path ? 'bg-primary/5 text-primary' : 'text-muted-foreground hover:bg-muted'
-                    }`}
+                    className={`block px-6 py-3 text-base font-bold rounded-xl transition-all ${location.pathname === item.path ? 'bg-primary/5 text-primary' : 'text-muted-foreground hover:bg-muted'
+                      }`}
                   >
                     {item.name}
                   </Link>

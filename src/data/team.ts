@@ -25,7 +25,12 @@ export const teamMembers: TeamMember[] = [
     details: [
       "Experienced Educational Administrator",
       "Expert in Curriculum Development",
-      "Advocate for Educational Equality"
+      "Advocate for Educational Equality",
+      "Career Mentor",
+      "Technical Support",
+      "Quality Assurance Evaluator",
+      "Social Crusader",
+      "Motivational Speaker"
     ],
     contact: {
       email: "equalrightseducationalservices@gmail.com",
@@ -154,7 +159,8 @@ export const teamMembers: TeamMember[] = [
       "IT Management",
       "Computer Education",
       "Software Developer",
-      "Student Mentorship"
+      "Student Mentorship",
+      "Technical Support"
     ],
     contact: {
       email: "developer.jasgitcodes@gmail.com",
