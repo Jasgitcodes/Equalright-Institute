@@ -4,11 +4,11 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import { HeroSlider } from '@/components/common/HeroSlider';
 import { ArrowRight, GraduationCap, ShieldCheck, Globe, Target, Eye, Rocket, Calendar, MapPin, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { 
-  Card, 
-  CardContent, 
-  CardHeader, 
-  CardTitle 
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
 } from '@/components/ui/card';
 import workshopImg from '@/assets/images/workshop.jpg';
 import skillsImg from '@/assets/images/skills.jpg';
@@ -32,8 +32,8 @@ const staggerContainer = {
 
 const Home: React.FC = () => {
   return (
-    <div className="space-y-24 pb-20">
-      <motion.div 
+    <div className="space-y-24 pb-20 -mb-28">
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -50,13 +50,13 @@ const Home: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <SectionHeader 
-            title="Our Core Services" 
+          <SectionHeader
+            title="Our Core Services"
             subtitle="We provide comprehensive educational services to empower individuals and institutions."
           />
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
           initial="initial"
           whileInView="animate"
@@ -80,8 +80,8 @@ const Home: React.FC = () => {
               description: "Providing skills acquisition and potential development programs for youths to foster self-reliance."
             }
           ].map((feature, i) => (
-            <motion.div 
-              key={ feature.title }
+            <motion.div
+              key={feature.title}
               variants={fadeInUp}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
       <section className="relative px-8 py-24 nature-gradient overflow-hidden -mx-20 border border-tertiary/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl -mr-48 -mt-48 animate-pulse" />
         <div className="absolute bottom-0 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl -ml-48 -mb-48 animate-pulse [animation-delay:1s]" />
-        
+
         <div className="container mx-auto relative z-10">
           <motion.div
             initial="initial"
@@ -115,14 +115,14 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <SectionHeader 
-              title="Our Purpose & Direction" 
+            <SectionHeader
+              title="Our Purpose & Direction"
               subtitle="Guided by a clear mission and an ambitious vision, we work towards specific, measurable goals for global equality."
               className="mb-8 px-12"
             />
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl px-16 md:px-4 mx-auto"
             initial="initial"
             whileInView="animate"
@@ -130,7 +130,7 @@ const Home: React.FC = () => {
             variants={staggerContainer}
           >
             {/* Mission Card */}
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               whileHover={{ y: -12 }}
             >
@@ -150,7 +150,7 @@ const Home: React.FC = () => {
             </motion.div>
 
             {/* Vision Card */}
-            <motion.div 
+            <motion.div
               variants={fadeInUp}
               whileHover={{ y: -12 }}
             >
@@ -175,7 +175,7 @@ const Home: React.FC = () => {
       {/* CEO Section */}
       <section className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
+          <motion.div
             className="relative"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -197,16 +197,16 @@ const Home: React.FC = () => {
               <p className="text-sm font-bold italic text-muted-foreground">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today."</p>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <SectionHeader 
-              title="Leadership & Vision" 
+            <SectionHeader
+              title="Leadership & Vision"
               subtitle="Under the guidance of Musa Kabiru Paul, EqualRights Educational Services has grown from a visionary idea into a transformative force in the Nigerian educational sector."
               className="text-left items-start"
             />
@@ -236,24 +236,24 @@ const Home: React.FC = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <SectionHeader 
-            title="Recent Events" 
+          <SectionHeader
+            title="Recent Events"
             subtitle="Catch up on our latest seminars, workshops, and community outreach programs."
           />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-{/* import workshopImg from '@/assets/images/workshop.jpg';
+          {/* import workshopImg from '@/assets/images/workshop.jpg';
 import skillsImg from '@/assets/images/skills.jpg';
 import conferenceImg from '@/assets/images/conference.jpg'; */}
 
-{/* // ... inside the component ... */}
+          {/* // ... inside the component ... */}
 
           {[
             {
@@ -281,8 +281,8 @@ import conferenceImg from '@/assets/images/conference.jpg'; */}
               image: conferenceImg
             }
           ].map((event, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               variants={fadeInUp}
               whileHover={{ y: -10 }}
             >
@@ -319,7 +319,7 @@ import conferenceImg from '@/assets/images/conference.jpg'; */}
       {/* Stats Section */}
       <section className="bg-card/50 backdrop-blur-sm border border-border/60 py-20 rounded-[3rem] mx-4 relative overflow-hidden shadow-inner">
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        <motion.div 
+        <motion.div
           className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-2 md:px-0 md:divide-x-2 divide-border text-center relative z-10"
           initial="initial"
           whileInView="animate"
@@ -341,13 +341,16 @@ import conferenceImg from '@/assets/images/conference.jpg'; */}
       </section>
 
       {/* Call to Action */}
-      <motion.section 
-        className="text-center space-y-10 py-12 relative overflow-hidden"
+      <motion.section
+        className="text-center relative px-8 py-24 nature-gradient overflow-hidden -mx-20 border border-tertiary/5"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
         variants={fadeInUp}
       >
+        <div className="absolute top-0 right-0 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl -mr-48 -mt-48 animate-pulse" />
+        <div className="absolute bottom-0 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl -ml-48 -mb-48 animate-pulse [animation-delay:1s]" />
+
         <div className="absolute inset-0 bg-dot-pattern opacity-100 -z-10" />
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">Ready to make an impact?</h2>
@@ -356,8 +359,8 @@ import conferenceImg from '@/assets/images/conference.jpg'; */}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="group inline-flex items-center justify-center rounded-full bg-primary px-10 py-4 text-lg font-bold text-primary-foreground transition-all hover:bg-primary/90 shadow-xl shadow-primary/20"
               >
                 Contact Our Team
